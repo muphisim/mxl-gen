@@ -1,0 +1,43 @@
+site_name: MxL-GEN Wiki
+site_description: Wiki-style documentation for the MxL-GEN optimisation and surrogate modelling framework
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Concepts: concepts.md
+      - Tutorial: tutorial.md
+  - Usage Guides:
+      - Ground Truth Generation: ground_truth.md
+      - Surrogate Models: surrogate_models.md
+      - Optimisation: optimisation.md
+  - API Reference:
+      - Overview: api/reference.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["src"]
+          options:
+            docstring_style: google
+            show_root_heading: true
+            show_source: true
+            members_order: source
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
